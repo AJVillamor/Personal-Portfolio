@@ -1,11 +1,11 @@
-import './App.css';
+import './Main.css';
 
-import Introduction from './Components/Introduction/introduction_view'
+import Content from './Components/main_container';
 
 function App() {
   return (
     <div className="App">
-      <Introduction />
+      <Content />
     </div>
   );
 }
