@@ -1,36 +1,36 @@
-.information-container, .active-page {
+.information-container {
   grid-template-columns: repeat(12, 1fr);
 }
-.information-container .about-container, .active-page .about-container {
+.information-container .about-container {
   grid-column: 1/span 12;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
-.information-container .about-container .left-about, .active-page .about-container .left-about {
+.information-container .about-container .left-about {
   grid-column: 2/span 5;
   text-align: justify;
 }
-.information-container .about-container .left-about p, .active-page .about-container .left-about p {
+.information-container .about-container .left-about p {
   line-height: 2rem;
   padding: 1rem;
   color: var(--color-grey-1);
 }
-.information-container .about-container .left-about h4, .active-page .about-container .left-about h4 {
+.information-container .about-container .left-about h4 {
   font-size: 2rem;
   text-transform: uppercase;
   white-space: nowrap;
 }
-.information-container .about-container .left-about h4 span, .active-page .about-container .left-about h4 span {
+.information-container .about-container .left-about h4 span {
   color: var(--secondary-color);
 }
-.information-container .about-container .right-about, .active-page .about-container .right-about {
+.information-container .about-container .right-about {
   grid-column: 8/span 4;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   margin-top: 10rem;
 }
-.information-container .about-container .right-about .about-item, .active-page .about-container .right-about .about-item {
+.information-container .about-container .right-about .about-item {
   border: 1px solid var(--color-grey-5);
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
@@ -38,24 +38,24 @@
   max-height: -moz-max-content;
   max-height: max-content;
 }
-.information-container .about-container .right-about .about-item:hover, .active-page .about-container .right-about .about-item:hover {
+.information-container .about-container .right-about .about-item:hover {
   cursor: default;
   transform: translateY(-5px);
   border: 1px solid var(--secondary-color);
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 }
-.information-container .about-container .right-about .about-item .abt-text, .active-page .about-container .right-about .about-item .abt-text {
+.information-container .about-container .right-about .about-item .abt-text {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
 }
-.information-container .about-container .right-about .about-item .abt-text .large-text, .active-page .about-container .right-about .about-item .abt-text .large-text {
+.information-container .about-container .right-about .about-item .abt-text .large-text {
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color);
   max-height: 10px;
 }
-.information-container .about-container .right-about .about-item .abt-text .small-text, .active-page .about-container .right-about .about-item .abt-text .small-text {
+.information-container .about-container .right-about .about-item .abt-text .small-text {
   padding-left: 3rem;
   position: relative;
   text-transform: uppercase;
@@ -65,8 +65,7 @@
 }
 
 .about-stats {
-  grid-column: 3/span 8;
-  padding-bottom: 4rem;
+  padding: 0 8.3% 0 8.3%;
 }
 .about-stats .skills-container {
   display: grid;
@@ -163,7 +162,7 @@
 }
 
 .about-timeline {
-  grid-column: 3/span 8;
+  padding: 0 8.3% 0 8.3%;
 }
 .about-timeline .timeline {
   display: grid;
@@ -214,4 +213,41 @@
 }
 .about-timeline .timeline .timeline-item p {
   color: var(--color-grey-2);
+}
+
+@media screen and (max-width: 500px) {
+  .information-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .information-container .about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8.3% 0 8.3%;
+  }
+  .information-container .about-container .right-about {
+    margin-top: 0;
+  }
+  .information-container .skills-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .information-container .skills-container .skill-item.highlighted {
+    border: 2px solid #007bff; /* Add your desired highlighting styles */
+  }
+  .information-container .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+  .information-container .timeline .timeline-item {
+    font-size: 90%;
+  }
+  .information-container .timeline .timeline-item .tl-icon {
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+  .information-container .timeline .timeline-item .tl-icon i {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=information.css.map */

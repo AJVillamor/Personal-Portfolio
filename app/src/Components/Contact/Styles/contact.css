@@ -1,14 +1,8 @@
 .contact-container {
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
   height: 100vh;
 }
 .contact-container .contact-content-con {
-  grid-column: 3/span 8;
-  grid-row: 3/span 9;
-  display: flex;
-  justify-content: center;
-  text-align: justify;
+  margin: 0 20% 0 20%;
 }
 .contact-container .contact-content-con .left-contact {
   flex: 2;
@@ -153,4 +147,19 @@
   font-weight: 800;
   font-size: 6.3rem;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 500px) {
+  .contact-content-con .contact-info .contact-item .icon {
+    font-size: x-small;
+  }
+  .contact-content-con .contact-info .contact-item .icon span {
+    text-align: left;
+  }
+  .main-title h2 {
+    font-size: 2rem;
+  }
+  .main-title h2 .bg-text {
+    font-size: 3.5rem;
+  }
 }/*# sourceMappingURL=contact.css.map */

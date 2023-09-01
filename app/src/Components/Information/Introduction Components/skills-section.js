@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect, useState} from "react";
 
 const Skills = () =>{
     const SkillSet = [
@@ -64,6 +64,8 @@ const Skills = () =>{
         },
     ];
 
+    const middleOfViewport = window.innerHeight / 2;
+
     return (
         <div className="skills-container">
             {SkillSet.map((category, index) => (
@@ -83,27 +85,7 @@ const Skills = () =>{
                         </div>
                     ))}
                 </div>
-                // ));
-                // <div key={index} className="skill-item">
-                //     <h4 className="stat-title">{element.topic}</h4>
-                // </div>
             ))}
-            {/* <div className="prog-languages skill-item">
-                <h4 className="stat-title">Programming Languages</h4>
-                    <div className="progress-bars">
-                        {ProgLang.map((element, index) => (
-                            <div key={index} className="progress-bar">
-                                <p className="prog-title">{element.title}</p>
-                                <div className="progress-con">
-                                    <div className="progress">
-                                        <p className="prog-text">{element.prof}%</p>
-                                        <span className="c prog-lang" style={{width: `${element.prof}%`}} ></span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-            </div> */}
         </div>
     );
 };

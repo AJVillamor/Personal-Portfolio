@@ -1,47 +1,57 @@
+.mobile-controls-container {
+  display: none;
+}
+
 .controls-container {
   position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  grid-column: 12/span 1;
-  grid-row: 1/span 12;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  background-color: var(--primary-color);
+}
+.controls-container .control {
+  height: 100%;
+  padding: 1.5rem;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 2.5rem;
-  width: 8.34%;
-  background-color: black;
 }
-.controls-container .control {
-  padding: 1rem;
-  cursor: pointer;
-  background-color: var(--color-grey-4);
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.7rem 0;
-  box-shadow: 0 0 5px var(--color-primary);
+.controls-container .control span {
+  text-transform: uppercase;
+}
+.controls-container .control .line {
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--text-color);
+  transition: width 0.3s ease-in;
+  transform-origin: center;
 }
 .controls-container .control:hover {
-  transform: scale(1);
-  transition-delay: 0.2s;
-  box-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
+  font-weight: 900;
+  word-spacing: 5px;
+  transform: translateY(-5px);
 }
-.controls-container .control i {
-  font-size: 1.2rem;
-  color: var(--color-grey-2);
-  pointer-events: none;
+.controls-container .control:hover .line {
+  width: 150%;
+  background-color: var(--text-color);
 }
-.controls-container .control :active {
+.controls-container .active-section {
+  font-weight: 900;
+  word-spacing: 5px;
+  transform: translateY(-5px);
+}
+.controls-container .active-section .line {
+  width: 150%;
   background-color: var(--secondary-color);
-  transition: all 0.4s ease-in-out;
-}
-.controls-container .control :active i {
-  color: var(--color-white);
 }
 
 .w3-bar-item {
@@ -103,14 +113,33 @@
 
 @media screen and (max-width: 500px) {
   .controls-container {
+    display: none;
+  }
+  .mobile-controls-container {
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    display: grid;
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    width: 100%;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--primary-color);
+  }
+  .mobile-controls-container i {
+    font-size: 1.2rem;
+    color: var(--color-grey-2);
+    pointer-events: none;
+  }
+  .mobile-controls-container .active-section i {
+    color: var(--secondary-color);
+  }
+  .mobile-controls-container::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: var(--secondary-color);
   }
   .view-controls-container {
     display: flex;

@@ -1,5 +1,5 @@
 :root{
-    --primary-color: linear-gradient(#111111, #272727);
+    --primary-color: #111111;
     --secondary-color: #C84B31;
     --text-color: #ECDBBA;    
     --color-black: #000;
@@ -13,7 +13,7 @@
 }
 
 body{
-    background-image: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--text-color); 
     font-family: 'Poppins', sans-serif;
     text-align: justify;
@@ -25,15 +25,17 @@ body{
 }
 
 .main-container{ 
-    grid-column: 2 / span 10;
-}
-
-.page{
-    /* display: none; */
+    grid-column: 1 / span 12;
 }
 
 .active-page{
-    /* display: grid;     */
+    animation: appear 1s ease-in-out;
+    transform: translateY(0) scaleY(1);
+}
+
+.page{
+    animation: appear 1s ease-in-out;
+    transform: translateY(0) scaleY(1);
 }
 
 @import './Components/Introduction/Styles/introduction.css';

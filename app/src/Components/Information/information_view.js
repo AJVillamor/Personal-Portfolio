@@ -8,7 +8,7 @@ import Timeline from "./Introduction Components/timeline-section";
 
 const Information = () =>{
     return (
-        <div className="information-container page" id="about">
+        <div className="information-container active-page page" id="about">
             <div className="main-title">
                 <h2>About <span>Me</span><span className="bg-text">Stats</span></h2>
             </div>

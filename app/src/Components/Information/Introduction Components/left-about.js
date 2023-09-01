@@ -5,7 +5,7 @@ import ViewControls from '../../Controls/view_controls';
 const LeftAbout = () => {
     return (
         <div className="left-about">
-            <h4>Information About <span>me</span></h4>
+            {/* <h4>Information About <span>me</span></h4> */}
             <p>
                 In the realm of code, I'm a recent computer science graduate driven by problem solving. 
                 Outside the classroom, I immerse myself in programming challenges, unraveling complexities 

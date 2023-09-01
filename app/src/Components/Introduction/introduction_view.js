@@ -5,7 +5,7 @@ import About from './Introduction Components/about';
 
 const Introduction = () => {
     return (
-        <div className= "introduction-container active-page page" id= "home">
+        <div className= "introduction-container page" id= "home">
             <Profile />
             <About />
         </div>

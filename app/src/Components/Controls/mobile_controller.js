@@ -1,30 +1,26 @@
 import React from "react";
 
-const MainControl = ({ handleButtonClick }) => {
+const MobileControl = ({ handleButtonClick }) => {
     return (
-        <div className="controls-container">
+        <div className="mobile-controls-container">
             <div className="control active-section btn-home"
             onClick={() => handleButtonClick(0, 'btn-home')}>
-                <span>home</span>
-                <div className="line"></div>
+                <i className="fas fa-home"></i>
             </div>
             <div className="control btn-about"
             onClick={() => handleButtonClick(1, 'btn-about')}>
-                <span>about</span>
-                <div className="line"></div>
+                <i className="fas fa-info"></i>
             </div>
             <div className="control btn-contact"
             onClick={() => handleButtonClick(2, 'btn-contact')}>
-                <span>contact</span>
-                <div className="line"></div>
+                <i className="fas fa-address-book"></i>
             </div>
             <div className="control btn-portfolio"
             onClick={() => handleButtonClick(0, 'btn-portfolio')}>
-                <span>portfolio</span>
-                <div className="line"></div>
+                <i className="fas fa-briefcase"></i>
             </div>
         </div>
     );
 };
 
-export default MainControl;
+export default MobileControl;

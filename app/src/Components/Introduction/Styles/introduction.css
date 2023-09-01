@@ -19,6 +19,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1;
   -webkit-clip-path: polygon(0 0, 46% 0, 85% 100%, 0 100%);
           clip-path: polygon(0 0, 46% 0, 85% 100%, 0 100%);
 }
@@ -38,7 +39,6 @@
      object-fit: fill;
   width: 100%;
   height: 100%;
-  display: none;
 }
 .introduction-container .right-introduction {
   grid-column: 8/span 4;
@@ -58,7 +58,7 @@
   padding-right: 2rem;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .introduction-container {
     display: flex;
     flex-direction: column;
@@ -67,6 +67,19 @@
   }
   .right-introduction {
     margin: 0 2rem 0 2rem;
+  }
+  .right-introduction .name {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+  .h-shape {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .right-introduction {
+    margin: 0 2rem 0 2rem;
+    justify-content: center;
   }
   .right-introduction .name {
     font-size: 2rem !important;

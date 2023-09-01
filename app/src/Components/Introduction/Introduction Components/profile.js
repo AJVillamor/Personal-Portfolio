@@ -27,6 +27,7 @@ const Profile = () => {
             <div className="image-container">
                 <img src={images[currentImageIndex]} alt="Not Found" />
             </div>
+            
         </div>
     );
 };
