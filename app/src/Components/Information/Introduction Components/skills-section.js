@@ -65,29 +65,82 @@ const Skills = () =>{
     ];
 
     const middleOfViewport = window.innerHeight / 2;
+    const [focus, setFocus] = useState(null);
+    const previousFocus = useRef(0);
+
+    useEffect(() => {
+        previousFocus.current = focus; 
+    }, [focus]);
+
+    useEffect(() => { 
+        const handleScroll = () => {        
+            const topElement = document.querySelector(`#skill-item-${0}`).getBoundingClientRect();
+            const botElement = document.querySelector(`#skill-item-${SkillSet.length-1}`).getBoundingClientRect();
+
+            const isNoFocus = topElement.top > middleOfViewport || botElement.bottom < middleOfViewport;
+            
+            // console.log(isNoFocus)
+            SkillSet.forEach((category, index) => {
+                const element = document.querySelector(`#skill-item-${index}`);
+
+                if (element) {
+                    const elementRect = element.getBoundingClientRect();
+                    const isElementInMiddle =
+                        elementRect.top < middleOfViewport &&
+                        elementRect.bottom > middleOfViewport;
+
+                    if (isElementInMiddle && index !== previousFocus.current) {
+                        setFocus(index);
+                        element.classList.add('skill-focus');
+                        if(previousFocus.current != null){
+                            const prevElement = document.querySelector(`#skill-item-${previousFocus.current}`);
+                            prevElement.classList.remove('skill-focus');
+                        }
+                    }
+                    if(isNoFocus === true){
+                        setFocus(null);
+                        if(previousFocus.current === 0){
+                            document.querySelector(`#skill-item-${0}`).classList.remove('skill-focus');
+                        }
+                        if(previousFocus.current === SkillSet.length-1){
+                            document.querySelector(`#skill-item-${SkillSet.length-1}`).classList.remove('skill-focus');     
+                        }
+                    } 
+                }
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <div className="skills-container">
-            {SkillSet.map((category, index) => (
-                <div key={index} className="skill-item">
-                    <h4 className="stat-title">{category.topic}</h4>
-                    {category.skills.map((skill, item) => (
-                        <div key={item} className="progress-bars">
-                            <div className="progress-bar">
-                                <p className="prog-title">{skill.title}</p>
-                                <div className="progress-con">
-                                    <div className="progress">
-                                        <p className="prog-text">{skill.prof}%</p>
-                                        <span className={`prog-${index}`} style={{width: `${skill.prof}%`}} ></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+        {SkillSet.map((category, index) => (
+            <div key={index} className="skill-item" id={`skill-item-${index}`}>
+            <h4 className="stat-title">{category.topic}</h4>
+            {category.skills.map((skill, item) => (
+                <div key={item} className="progress-bars">
+                <div className="progress-bar">
+                    <p className="prog-title">{skill.title}</p>
+                    <div className="progress-con">
+                    <div className="progress">
+                        <p className="prog-text">{skill.prof}%</p>
+                        <span
+                        className={`prog-${index}`}
+                        style={{ width: `${skill.prof}%` }}
+                        ></span>
+                    </div>
+                    </div>
+                </div>
                 </div>
             ))}
+            </div>
+        ))}
         </div>
     );
-};
+    };
 
 export default Skills;

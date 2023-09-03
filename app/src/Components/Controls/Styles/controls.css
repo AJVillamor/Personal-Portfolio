@@ -116,10 +116,13 @@
     display: none;
   }
   .mobile-controls-container {
+    background-color: rgb(1, 39, 39) !important;
     position: fixed;
     display: grid;
     text-align: center;
-    padding: 1rem 0 1rem 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 75px;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -134,12 +137,13 @@
   .mobile-controls-container .active-section i {
     color: var(--secondary-color);
   }
-  .mobile-controls-container::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background-color: var(--secondary-color);
+  .mobile-controls-container .icon-holder {
+    background-color: rgb(1, 39, 39) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    border-radius: 50%;
   }
   .view-controls-container {
     display: flex;

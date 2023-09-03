@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
 }
 .information-container .about-container .right-about .about-item {
   border: 1px solid var(--color-grey-5);
@@ -40,7 +40,6 @@
 }
 .information-container .about-container .right-about .about-item:hover {
   cursor: default;
-  transform: translateY(-5px);
   border: 1px solid var(--secondary-color);
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 }
@@ -54,6 +53,14 @@
   font-weight: 700;
   color: var(--secondary-color);
   max-height: 10px;
+}
+.information-container .about-container .right-about .about-item .abt-text .large-text::before {
+  content: "";
+  position: absolute;
+  margin-left: 50px;
+  height: 1px;
+  width: 20%;
+  background-color: var(--color-grey-4);
 }
 .information-container .about-container .right-about .about-item .abt-text .small-text {
   padding-left: 3rem;
@@ -92,7 +99,7 @@
 }
 .about-stats .skills-container .skill-item:hover [class^=prog-] {
   transform: translateX(0%) !important;
-  transition: all 1s ease-out;
+  transition: all 1.5s ease-out;
 }
 .about-stats .skills-container .skill-item .progress-bars {
   display: flex;
@@ -117,15 +124,6 @@
   align-items: center;
   position: relative;
 }
-.about-stats .skills-container .skill-item .progress-bars .progress-bar .progress-con .prog-text {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 1;
-  transform: translateX(-50%);
-  color: var(--color-grey-2);
-  visibility: hidden;
-}
 .about-stats .skills-container .skill-item .progress-bars .progress-bar .progress-con .progress {
   width: 100%;
   height: 0.45rem;
@@ -139,8 +137,8 @@
   left: 0;
   height: 100%;
   background-color: var(--secondary-color);
-  transform: translateX(-101%);
-  transition: all 0.4s ease-out;
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in-out;
 }
 
 .stat-title {
@@ -232,8 +230,15 @@
     display: flex;
     flex-direction: column;
   }
-  .information-container .skills-container .skill-item.highlighted {
-    border: 2px solid #007bff; /* Add your desired highlighting styles */
+  .information-container .skills-container .skill-focus {
+    cursor: default;
+    transform: translateY(-15px);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 1px 4px 15px var(--color-grey-6);
+  }
+  .information-container .skills-container .skill-focus [class^=prog-] {
+    transform: translateX(0%) !important;
+    transition: all 1s ease-out;
   }
   .information-container .timeline {
     display: flex;

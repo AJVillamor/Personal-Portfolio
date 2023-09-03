@@ -112,10 +112,13 @@
         display: none;
     }
     .mobile-controls-container{
+        background-color: rgb(1, 39, 39) !important;
         position: fixed;
         display: grid;
         text-align: center;
-        padding: 1rem 0 1rem 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 75px;
         width: 100%;
         bottom: 0;
         left: 0;
@@ -132,13 +135,25 @@
             color: var(--secondary-color);
             }
         }
-        &::before{
-            content: "";
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            background-color: var(--secondary-color);
+        .icon-holder{
+            background-color: rgb(1, 39, 39) !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            border-radius: 50%;
         }
+        .holder-active{
+            // transform: translateY(-23px);
+            // width: 120%;
+        }
+        // &::before{
+        //     content: "";
+        //     position: absolute;
+        //     height: 1px;
+        //     width: 100%;
+        //     background-color: var(--secondary-color);
+        // }
     }
 
     .view-controls-container{
