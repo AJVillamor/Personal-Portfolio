@@ -25,6 +25,18 @@ const Content = () => {
         })
     }
 
+    const handleModeButon = () => {
+        const activeMode = document.querySelector('.active-mode');
+        const reserveMode = document.querySelector('.reserve-mode');
+
+        activeMode.classList.remove('active-mode');
+        activeMode.classList.add('reserve-mode');
+
+        reserveMode.classList.remove('reserve-mode');
+        reserveMode.classList.add('active-mode');
+        document.body.classList.toggle("light-mode");
+    }
+
     const ActivePage = pages[buttonValue];
 
     return (
@@ -32,8 +44,8 @@ const Content = () => {
             <div className="main-container">
                 <ActivePage className="active-page"/>
             </div>
-            <MainControl handleButtonClick={handleButtonClick} />
-            <MobileControl handleButtonClick={handleButtonClick} />
+            <MainControl handleButtonClick={handleButtonClick} handleModeButon={handleModeButon}/>
+            <MobileControl handleButtonClick={handleButtonClick} handleModeButon={handleModeButon} />
         </>
     );
 };
