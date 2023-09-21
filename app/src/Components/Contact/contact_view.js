@@ -18,7 +18,7 @@ const Contact = () =>{
                         <div className="contact-item">
                             <div className="icon">
                                 <i className="fas fa-map-marker-alt"></i>
-                                <span>Naga City(4400), Camarines Sur, Philippines</span>
+                                <span>Naga City, Camarines Sur, Philippines</span>
                             </div>
                         </div>
                         <div className="contact-item">
